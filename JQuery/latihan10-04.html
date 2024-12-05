@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulasi DOM</title>
+</head>
+<body>
+    <div>
+        <h3>menghitung luas persegi</h3>
+        <div>
+            panjang <input type="text" id="txpj">
+            
+        </div>
+        <div>
+            lebar <input type="text" id="txlb">
+            
+        </div>
+        <div>
+            <button id="cmdHitung">hitung luas</button>
+            
+        </div>
+
+        <div>
+            <span class="viewHasil"></span>
+            
+        </div>
+
+    </div>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#cmdHitung").on('click',function(){
+            let pj = $('txpj').val()
+            let lb = $('txlb').val()
+
+            let Luas = pj*lb
+            let info = "Luas persegi<br>"
+            info += "Luas = Panjang x Lebar<br>"
+            info += "luas = " + pj + "X" + lb+ "<br>"
+            info += "luas = " + Luas
+            $('.viewHasil').html(info)
+
+            })
+        })
+    </script>
+</body>
+</html>
